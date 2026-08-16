@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { contact } from "@/data/site";
+import { asset } from "@/lib/asset";
 
 type Props = {
   name: string;
@@ -12,12 +12,12 @@ export default function ProductCard({ name, desc, image, price }: Props) {
   return (
     <div className="group overflow-hidden rounded-2xl border border-smoke-800 bg-smoke-900/50 transition hover:border-ember-500/60">
       <div className="relative aspect-square overflow-hidden bg-smoke-800">
-        <Image
-          src={image}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={asset(image)}
           alt={name}
-          fill
-          sizes="(max-width: 768px) 100vw, 25vw"
-          className="object-cover transition duration-500 group-hover:scale-105"
+          loading="lazy"
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
       </div>
       <div className="p-4">

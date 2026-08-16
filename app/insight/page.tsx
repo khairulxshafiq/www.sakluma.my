@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { asset } from "@/lib/asset";
 import { brand } from "@/data/site";
 
 export const metadata: Metadata = { title: "Insight" };
@@ -36,12 +36,12 @@ export default function InsightPage() {
             className="overflow-hidden rounded-2xl border border-smoke-800 bg-smoke-900/50"
           >
             <div className="relative aspect-video bg-smoke-800">
-              <Image
-                src={s.image}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={asset(s.image)}
                 alt={s.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <div className="p-5">

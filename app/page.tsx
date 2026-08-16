@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
+import { asset } from "@/lib/asset";
 import { brand, contest, jumpLinks, products } from "@/data/site";
 
 export default function Home() {
@@ -9,13 +9,11 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="/images/hero-lembu.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset("/images/hero-lembu.png")}
             alt="Sakluma salai tempurung kelapa"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-30"
+            className="h-full w-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-smoke-950/70 via-smoke-950/60 to-smoke-950" />
         </div>
@@ -76,12 +74,12 @@ export default function Home() {
       <section className="border-y border-smoke-800 bg-smoke-900/40">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-16 md:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src="/images/story-1.jpg"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset("/images/story-1.jpg")}
               alt="Cerita Sakluma"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
           <div>

@@ -1,4 +1,5 @@
 import { brand, contact, disclaimer, jumpLinks } from "@/data/site";
+import { asset } from "@/lib/asset";
 
 export default function Footer() {
   return (
@@ -39,10 +40,10 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-smoke-200">Sakluma</h4>
           <ul className="mt-3 space-y-2 text-sm text-smoke-300">
-            <li><a className="hover:text-ember-400" href="/product-list">Product List</a></li>
-            <li><a className="hover:text-ember-400" href="/ourvendor">Our Vendor</a></li>
-            <li><a className="hover:text-ember-400" href="/upcoming">Upcoming</a></li>
-            <li><a className="hover:text-ember-400" href="/insight">Insight</a></li>
+            <li><a className="hover:text-ember-400" href={asset("/product-list")}>Product List</a></li>
+            <li><a className="hover:text-ember-400" href={asset("/ourvendor")}>Our Vendor</a></li>
+            <li><a className="hover:text-ember-400" href={asset("/upcoming")}>Upcoming</a></li>
+            <li><a className="hover:text-ember-400" href={asset("/insight")}>Insight</a></li>
           </ul>
         </div>
       </div>
